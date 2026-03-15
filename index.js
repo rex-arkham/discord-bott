@@ -97,20 +97,14 @@ console.error(error);
 client.on("guildMemberAdd", member => {
 
 const channel = member.guild.channels.cache.find(c => c.name === "mainchat");
-if (!channel) return;
+if(!channel) return;
 
 const embed = new EmbedBuilder()
-.setTitle("🎉 New Member Joined!")
-.setDescription(
-`Hey ${member} 👋\n\nWelcome to **${member.guild.name}**!\nMake sure to read the rules and enjoy your stay.`
-)
-.addFields(
-{ name: "User", value: member.user.tag, inline: true },
-{ name: "Member Count", value: `${member.guild.memberCount}`, inline: true }
-)
-.setThumbnail(member.user.displayAvatarURL())
-.setColor(Math.floor(Math.random() * 16777215))
-.setTimestamp();
+.setTitle("Welcome to Stellaria !")
+.setDescription(`${member} <a:emoji_1:1482659609222184960>`)
+.setImage("https://media.discordapp.net/attachments/1482312762523910288/1482679923100356748/e27b80faaac19ce6a02f926709d10fab.gif?ex=69b7d4c8&is=69b68348&hm=e7f69fa663f2ac4a91d524f8b876542fe9708c3b41fce444b364ee8b4bf6afac&=&width=450&height=253")
+.setColor("#21184b")
+.setFooter({ text: "Enjoy your stay~" });
 
 channel.send({ embeds: [embed] });
 
