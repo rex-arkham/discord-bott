@@ -112,13 +112,13 @@ channel.send({ embeds: [embed] });
 
 client.on("guildMemberRemove", member => {
 
-const channel = member.guild.channels.cache.find(c => c.name === "mainchat");
+const channel = member.guild.channels.cache.find(c => c.name === "gate");
 if(!channel) return;
 
 const embed = new EmbedBuilder()
 .setTitle("Goodbye")
 .setDescription(`${member.user.username}`)
-.setImage("PASTE_GIF_LINK_HERE")
+.setImage("https://cdn.discordapp.com/attachments/1482312762523910288/1482708473958498465/993461de33f8b1ffb25bd1651bbe3da3.gif?ex=69b7ef5f&is=69b69ddf&hm=1c665580e8e81c07bddb572c94090035e06e66dce3a3176f2cef8d53be11f6d9&")
 .setColor("#21184b")
 .setFooter({ text: "We hope you return~" });
 
