@@ -110,6 +110,22 @@ channel.send({ embeds: [embed] });
 
 });
 
+client.on("guildMemberRemove", member => {
+
+const channel = member.guild.channels.cache.find(c => c.name === "mainchat");
+if(!channel) return;
+
+const embed = new EmbedBuilder()
+.setTitle("Goodbye")
+.setDescription(`${member.user.username}`)
+.setImage("PASTE_GIF_LINK_HERE")
+.setColor("#21184b")
+.setFooter({ text: "We hope you return~" });
+
+channel.send({ embeds: [embed] });
+
+});
+
 
 /* ---------- COMMAND HANDLER ---------- */
 
