@@ -96,7 +96,7 @@ console.error(error);
 
 client.on("guildMemberAdd", member => {
 
-const channel = member.guild.channels.cache.find(c => c.name === "mainchat");
+const channel = member.guild.channels.cache.find(c => c.name === "gate");
 if(!channel) return;
 
 const embed = new EmbedBuilder()
